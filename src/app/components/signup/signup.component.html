@@ -1,0 +1,81 @@
+<form (ngSubmit)="singup()" [formGroup]="signupForm" class="w-75 mx-auto my-4">
+  <h2 class="mat-headline-4">Signup Form</h2>
+  <!--  -->
+  <mat-form-field class="w-100">
+    <mat-label>first_name</mat-label>
+    <input
+      type="text"
+      formControlName="first_name"
+      matInput
+      placeholder="Ex :omar waleed"
+    />
+    <button matIconSuffix mat-icon-button>
+        <mat-icon>person</mat-icon>
+    </button>
+    <mat-error>{{ firstNamecontrollerErrorMsg }}</mat-error>
+  </mat-form-field>
+  <!--  -->
+    <!--  -->
+    <mat-form-field class="w-100">
+        <mat-label>last_name</mat-label>
+       
+        <input
+          type="text"
+          formControlName="last_name"
+          matInput
+          placeholder="Ex :omar waleed"
+        />
+        <button matIconSuffix mat-icon-button>
+            <mat-icon>person</mat-icon>
+        </button>
+        <mat-error>{{ lastNamecontrollerErrorMsg }}</mat-error>
+      </mat-form-field>
+      <!--  -->
+        <!--  -->
+  <mat-form-field class="w-100">
+    <mat-label>age</mat-label>
+    <input
+      type="number"
+      formControlName="age"
+      matInput
+      placeholder="Ex :omar waleed"
+    />
+    <button matIconSuffix mat-icon-button>
+        <mat-icon>person</mat-icon>
+    </button>
+    <mat-error>{{ agecontrollerErrorMsg }}</mat-error>
+  </mat-form-field>
+  <!--  -->
+    <!--  -->
+    <mat-form-field class="w-100">
+        <mat-label>password</mat-label>
+        <input
+          type="text"
+          formControlName="password"
+          matInput
+          placeholder="Ex :omar waleed"
+        />
+        <button matIconSuffix mat-icon-button>
+            <mat-icon>password</mat-icon>
+        </button>
+        <mat-error>{{ passwordcontrollerErrorMsg }}</mat-error>
+      </mat-form-field>
+      <!--  -->
+        <!--  -->
+  <mat-form-field class="w-100">
+    <mat-label>email</mat-label>
+    <input
+      type="email"
+      formControlName="email"
+      matInput
+      placeholder="Ex :omar waleed"
+    />
+    <button matIconSuffix mat-icon-button>
+        <mat-icon>email</mat-icon>
+    </button>
+    <mat-error>{{ emailcontrollerErrorMsg }}</mat-error>
+  </mat-form-field>
+  <!--  -->
+
+  <button mat-raised-button color="accent" [disabled]="signupForm.invalid">signup</button>
+</form>

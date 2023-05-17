@@ -1,0 +1,8 @@
+<mat-toolbar color="primary" class="justify-content-between px-5">
+    <span><mat-icon class="nav--icon">event_note</mat-icon>NoteApp</span>
+    <button mat-icon-button (click)="sideNav.toggle()">
+        <mat-icon>menue</mat-icon>
+    </button>
+</mat-toolbar>
+
+<mat-progress-bar color="accent" *ngIf="_authSer.isloading | async" mode="indeterminate"></mat-progress-bar>

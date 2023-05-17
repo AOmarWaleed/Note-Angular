@@ -1,0 +1,12 @@
+<div class="min-vh-100 d-flex flex-column">
+  <app-navbar [sideNav]="x"></app-navbar>
+  <mat-drawer-container class="flex-grow-1">
+    <mat-drawer [autoFocus]="false" position="start" #x mode="push" >
+      <app-sidenav></app-sidenav>
+    </mat-drawer>
+    <mat-drawer-content class="p-3">
+      <router-outlet></router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>
+<app-footer></app-footer>
