@@ -1,0 +1,22 @@
+<ng-container *ngIf="heading !== 'delete'; else deleteForm">
+  <form [formGroup]="noteForm" class="p-4" (ngSubmit)="submit()">
+    <h2>{{ heading }}</h2>
+    <mat-form-field class="w-100">
+      <mat-label>title</mat-label>
+      <input type="text" formControlName="title" matInput placeholder="" />
+      <button matIconSuffix mat-icon-button>
+        <mat-icon>title</mat-icon>
+      </button>
+    </mat-form-field>
+   
+
+    <button [disabled]="noteForm.invalid" mat-button>submit</button>
+  </form>
+</ng-container>
+
+<ng-template #deleteForm>
+  <div class="p-4 text-center ">
+    <h4>are u sure ?</h4>
+    <button class="w-100" mat-raised-button color="accent" (click)="submit()">yeas</button>
+  </div>
+</ng-template>

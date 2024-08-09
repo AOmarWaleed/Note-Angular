@@ -1,0 +1,16 @@
+<form (ngSubmit)="login()" [formGroup]="loginForm" class="w-75 mx-auto my-4">
+    <h2 class="mat-headline-4">Login Form</h2>
+    <mat-form-field class="w-100">
+        <mat-label>email</mat-label>
+        <input type="email" formControlName="email" matInput placeholder="email">
+        <mat-error>{{emailFormControllerErrorMsg}}</mat-error>
+    </mat-form-field>
+    <mat-form-field class="w-100">
+        <mat-label>password</mat-label>
+        <input type="password" formControlName="password" matInput placeholder="password">
+        <mat-error>{{passwordFormControllerErrorMsg}}</mat-error>
+    </mat-form-field>
+
+
+    <button [disabled]="loginForm.invalid" mat-button color="accent">login</button>
+</form>

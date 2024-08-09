@@ -1,0 +1,50 @@
+<div class="container">
+  <button
+    mat-button
+    class="d-block ms-auto"
+    (click)="openDialog('add')"
+    color="accent"
+  >
+    addNote
+  </button>
+  <div class="row" *ngIf="!isLoading">
+    <ng-container *ngIf="todos.length">
+      <div class="col-md-4 g-4" *ngFor="let note of todos">
+        <mat-card class="p-4">
+          <button
+            class="d-block ms-auto"
+            mat-icon-button
+            [matMenuTriggerFor]="menu"
+            aria-label="Example icon-button with a menu"
+          >
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="openDialog('delete', note)">
+              <mat-icon>delete</mat-icon>
+              <span>delete</span>
+            </button>
+          </mat-menu>
+          <div class="d-flex justify-content-between pe-3 align-items-center my-2">
+            <h2>
+              {{ note.title }}
+            </h2>
+
+            <input
+              type="checkbox"
+              name=""
+              (click)="markNoteCompleted(note._id)"
+              [checked]="note.completed"
+              [disabled]="note.completed"
+              id=""
+            />
+          </div>
+        </mat-card>
+      </div>
+    </ng-container>
+
+    <div class="" *ngIf="!todos.length">
+      <h2>U didn't add any notes yet</h2>
+    </div>
+  </div>
+</div>

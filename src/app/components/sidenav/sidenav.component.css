@@ -1,0 +1,7 @@
+.sideNav {
+    min-width: 200px;
+}
+
+.active__ > button {
+    color: red;
+}

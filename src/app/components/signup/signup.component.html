@@ -1,0 +1,80 @@
+<form (ngSubmit)="singup()" [formGroup]="signupForm" class="w-75 mx-auto my-4">
+  <h2 class="mat-headline-4">Signup Form</h2>
+  <!--  -->
+  <mat-form-field class="w-100">
+    <mat-label>name</mat-label>
+    <input
+      type="text"
+      formControlName="name"
+      matInput
+      placeholder="Ex :omar waleed"
+    />
+    <button matIconSuffix mat-icon-button>
+        <mat-icon>person</mat-icon>
+    </button>
+    <mat-error>{{ nameErrorMsg }}</mat-error>
+  </mat-form-field>
+  <!--  -->
+    <!--  -->
+    <mat-form-field class="w-100">
+        <mat-label>phone</mat-label>
+       
+        <input
+          type="text"
+          formControlName="phone"
+          matInput
+          placeholder="Ex :01009253092"
+        />
+        <button matIconSuffix mat-icon-button>
+            <mat-icon>phone</mat-icon>
+        </button>
+        <mat-error>{{ phoneErrorMsg }}</mat-error>
+      </mat-form-field>
+      <!--  -->
+        <!--  -->
+
+  <!--  -->
+    <!--  -->
+    <mat-form-field class="w-100">
+        <mat-label>password</mat-label>
+        <input
+          type="password"
+          formControlName="password"
+          matInput
+        />
+        <button matIconSuffix mat-icon-button>
+            <mat-icon>password</mat-icon>
+        </button>
+        <mat-error>{{ passErrorMsg }}</mat-error>
+      </mat-form-field>
+    <mat-form-field class="w-100">
+        <mat-label>rePassword</mat-label>
+        <input
+          type="password"
+          formControlName="rePassword"
+          matInput
+        />
+        <button matIconSuffix mat-icon-button>
+            <mat-icon>password</mat-icon>
+        </button>
+        <mat-error>{{ rePassErrorMsg }}</mat-error>
+      </mat-form-field>
+      <!--  -->
+        <!--  -->
+  <mat-form-field class="w-100">
+    <mat-label>email</mat-label>
+    <input
+      type="email"
+      formControlName="email"
+      matInput
+      placeholder="Ex :omarwaleed@gmail.com"
+    />
+    <button matIconSuffix mat-icon-button>
+        <mat-icon>email</mat-icon>
+    </button>
+    <mat-error>{{ emailErrorMsg }}</mat-error>
+  </mat-form-field>
+  <!--  -->
+
+  <button mat-raised-button color="accent" [disabled]="signupForm.invalid">signup</button>
+</form>
